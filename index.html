@@ -141,11 +141,9 @@
 
   cracks.forEach(crack => {
     const textarea = crack.querySelector('textarea');
-    textarea.addEventListener('blur', () => {
-      if (textarea.value.trim() === '') {
-        return;
-      }
-      textarea.style.display = 'none';
+    // Cambiado el evento 'blur' por 'click'
+    crack.addEventListener('click', (event) => {
+      event.stopPropagation(); // Evita que se cierre al hacer clic dentro del textarea
     });
   });
 </script>
