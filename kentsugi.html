@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kintsugi</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #c39c5c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+  .crack {
+    position: absolute;
+    border: 2px solid gold;
+    background-color: rgba(255, 215, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .crack textarea {
+    width: 100px;
+    height: 40px;
+    resize: none;
+    font-family: inherit;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 12px;
+    display: block;
+  }
+  .coordinates {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .crack textarea {
+      width: 80px;
+      height: 30px;
+      font-size: 10px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+<h1>Kintsugi IGH</h1>
+<div class="container">
+  <img src="https://images.lvrcdn.com/Zoom75I/0QQ/019_798491b3-7398-40aa-8a8c-02490b6fbc3b.JPG" alt="Kintsugi Image" id="kintsugi-image">
+  <div class="coordinates"></div>
+  <div class="crack" style="left: 749px; top: 749px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 500px; top: 630px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 530px; top: 800px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 530px; top: 900px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 530px; top: 1000px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 530px; top: 1100px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 530px; top: 1200px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 650px; top: 1150px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 650px; top: 1275px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 750px; top: 810px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 800px; top: 850px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 750px; top: 950px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 750px; top: 1025px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 450px; top: 250px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 450px; top: 325px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 450px; top: 400px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 450px; top: 475px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <div class="crack" style="left: 350px; top: 600px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <!-- Agrega más puntos de comentarios aquí -->
+  <div class="crack" style="left: 300px; top: 300px;">
+    <textarea placeholder="Escribe aquí"></textarea>
+  </div>
+  <!-- Fin de puntos de comentarios -->
+</div>
+<script>
+  const cracks = document.querySelectorAll('.crack');
+  const image = document.getElementById('kintsugi-image');
+  const coordinatesDisplay = document.querySelector('.coordinates');
+
+  image.addEventListener('mousemove', (event) => {
+    const x = event.offsetX;
+    const y = event.offsetY;
+    coordinatesDisplay.textContent = `Coordenadas: ${x}px, ${y}px`;
+  });
+
+  cracks.forEach(crack => {
+    const textarea = crack.querySelector('textarea');
+    textarea.addEventListener('blur', () => {
+      if (textarea.value.trim() === '') {
+        return;
+      }
+      textarea.style.display = 'none';
+    });
+  });
+</script>
+</body>
+</html>
